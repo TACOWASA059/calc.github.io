@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ワールド座標位置検索</title>
+  <script>
+    function updateCoordinates() {
+      var x = parseFloat(document.getElementById("x").value);
+      var z = parseFloat(document.getElementById("z").value);
+
+      var latitude = (1800.0 / (4.0*Math.PI)) * (Math.atan(Math.exp((9725.0 - z)*924.0*Math.sqrt(2.0) / (1.25 * 6378137))) - Math.PI / 4.0);
+      latitude=Math.floor(latitude*100)/100;
+      var longitude = (180.0 / (Math.PI*6378137)) * (x - 15374.0) * (924.0 * Math.sqrt(2.0)) ;
+      longitude=Math.floor(longitude*100)/100;
+
+      var latitudeDirection = "北緯(N)";
+      if (latitude < 0) {
+        latitudeDirection = "南緯(S)";
+        latitude = -latitude;
+      }
+
+      var longitudeDirection = "東経(E)";
+      if (longitude < 0) {
+        longitudeDirection = "西経(W)";
+        longitude = -longitude;
+      }
+
+      var resultText ="x: " + x + ", z: " + z+"\n"+ "緯度: " + latitudeDirection+Math.abs(latitude) + ", 経度: " + longitudeDirection+Math.abs(longitude) + "\n";
+      document.getElementById("result2").innerText = resultText;
+    }
+
+    function searchCoordinates() {
+      var latitudeDirection = document.getElementById("latitudeDirection").value;
+      var latitude = parseFloat(document.getElementById("latitude").value);
+      var longitudeDirection = document.getElementById("longitudeDirection").value;
+      var longitude = parseFloat(document.getElementById("longitude").value);
+
+      if (latitude < 0 || latitude > 90 || isNaN(latitude)) {
+        alert("緯度は0から90までの値を入力してください。");
+        return;
+      }
+
+      if (longitude < 0 || longitude > 180 || isNaN(longitude)) {
+        alert("経度は0から180までの値を入力してください。");
+        return;
+      }
+
+      if (latitudeDirection == "南緯(S)") {
+        latitude = -latitude;
+      }
+      if (longitudeDirection == "西経(W)") {
+        longitude = -longitude;
+      }
+      var x = 15374.0 + (6378137 * Math.PI * longitude / (924.0 * Math.sqrt(2.0) * 180));
+      x = Math.floor(x * 100) / 100;
+      var z = 9725.0 - (1.25 * 6378137 * Math.log(Math.tan(Math.PI / 4.0 + (latitude * 4.0 * Math.PI / 1800.0))) / (924.0 * Math.sqrt(2.0)));
+      z = Math.floor(z * 100) / 100;
+
+      // 結果をテキスト領域に表示する
+      var resultText = "緯度: " + latitude + ", 経度: " + longitude + "<br>";
+      resultText += "x: " + x + ", z: " + z+"<br>";
+      resultText += "<textarea id='copyText' rows='1' cols='20'>/tp " + x + " ~ " + z + "</textarea> <br>";
+      resultText += "<button onclick='copyToClipboard()'>コマンドをコピー</button><br>";
+      document.getElementById("result").innerHTML = resultText;
+    }
+    function copyToClipboard() {
+      var copyText = document.getElementById("copyText");
+      copyText.select();
+      copyText.setSelectionRange(0, 99999); // For mobile devices
+      document.execCommand("copy");
+      alert("コピーしました: " + copyText.value);
+    }
+  </script>
+</head>
+<body>
+  <h1>ワールド座標位置検索</h1>
+  <h2>変換</h2>
+  <p>
+    緯度:
+    <select id="latitudeDirection">
+      <option value="北緯(N)">北緯</option>
+      <option value="南緯(S)">南緯</option>
+    </select>
+    <input type="number" id="latitude" min="0" max="90" step="1" style="width: 80px;">
+  </p>
+  <p>
+    経度:
+    <select id="longitudeDirection">
+      <option value="東経(E)">東経</option>
+      <option value="西経(W)">西経</option>
+    </select>
+    <input type="number" id="longitude" min="0" max="180" step="1" style="width: 80px;">
+  </p>
+  <button onclick="searchCoordinates()">検索</button>
+  <p id="result"></p>
+
+  <h2>逆変換</h2>
+  <p>
+    x:
+    <input type="number" id="x" step="0.01" style="width: 100px;">
+  </p>
+  <p>
+    z:
+    <input type="number" id="z" step="0.01" style="width: 100px;">
+  </p>
+  <button onclick="updateCoordinates()">逆変換</button>
+  <p id="result2"></p>
+</body>
+</html>
