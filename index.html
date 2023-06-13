@@ -71,8 +71,8 @@
     }
     function copyToClipboard(button) {
       var row = button.parentNode.parentNode;
-      var x = row.cells[4].innerHTML;
-      var z = row.cells[5].innerHTML;
+      var x = row.cells[2].innerHTML;
+      var z = row.cells[3].innerHTML;
       var command = "/tp " + x + " ~ " + z;
 
       // クリップボードにコピーする
