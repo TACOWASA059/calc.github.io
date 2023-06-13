@@ -69,6 +69,19 @@
       document.execCommand("copy");
       alert("コピーしました: " + copyText.value);
     }
+    function copyToClipboard(button) {
+      var row = button.parentNode.parentNode;
+      var x = row.cells[4].innerHTML;
+      var z = row.cells[5].innerHTML;
+      var command = "/tp " + x + " ~ " + z;
+
+      // クリップボードにコピーする
+      navigator.clipboard.writeText(command).then(function() {
+        alert("コピーされました: " + command);
+      }, function() {
+        alert("コピーに失敗しました.");
+      });
+  }
   </script>
 </head>
 <body>
@@ -104,5 +117,1203 @@
   </p>
   <button onclick="updateCoordinates()">逆変換</button>
   <p id="result2"></p>
+
+  <table border="1">
+    <tr>
+      <td>国と地域</td>
+      <td>首都</td>
+      <td>x座標</td>
+      <td>z座標</td>
+      <td>ボタン</td>
+    <tr>
+      <td>アイスランド</td>
+      <td>レイキャビク</td>
+      <td>13504.743</td>
+      <td>3337.36</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>アイルランド</td>
+      <td>ダブリン</td>
+      <td>14840.113</td>
+      <td>4690.825</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>アゼルバイジャン</td>
+      <td>バクー</td>
+      <td>19619.149</td>
+      <td>6088.148</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>アフガニスタン</td>
+      <td>カブール</td>
+      <td>21266.846</td>
+      <td>6663.209</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>アメリカ（米国）</td>
+      <td>ワシントンD.C.</td>
+      <td>8813.084</td>
+      <td>6235.507</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>アラブ首長国連邦</td>
+      <td>アブダビ</td>
+      <td>20006.479</td>
+      <td>7597.036</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>アルジェリア</td>
+      <td>アルジェ</td>
+      <td>15634.486</td>
+      <td>6444.55</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>アルゼンチン</td>
+      <td>ブエノスアイレス</td>
+      <td>10401.194</td>
+      <td>12795.163</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>アルバニア</td>
+      <td>ティラナ</td>
+      <td>17062.391</td>
+      <td>5990.95</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>アルメニア</td>
+      <td>エレバン</td>
+      <td>19165.261</td>
+      <td>6107.522</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>アンゴラ</td>
+      <td>ルアンダ</td>
+      <td>16501.551</td>
+      <td>10478.102</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>アンティグア・バーブーダ</td>
+      <td>セントジョンズ</td>
+      <td>10106.418</td>
+      <td>8252.634</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>アンドラ</td>
+      <td>アンドララベラ</td>
+      <td>15503.659</td>
+      <td>5870.354</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>イエメン</td>
+      <td>サヌア</td>
+      <td>19139.9</td>
+      <td>8406.705</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>イギリス（英国）</td>
+      <td>ロンドン</td>
+      <td>15367.302</td>
+      <td>4901.466</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>イスラエル</td>
+      <td>エルサレム</td>
+      <td>18374.69</td>
+      <td>6924.124</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>イタリア</td>
+      <td>ローマ</td>
+      <td>16437.456</td>
+      <td>5933.304</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>イラク</td>
+      <td>バグダッド</td>
+      <td>19156.803</td>
+      <td>6776.751</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>イラン</td>
+      <td>テヘラン</td>
+      <td>19753.994</td>
+      <td>6551.188</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>インド</td>
+      <td>デリー</td>
+      <td>21952.368</td>
+      <td>7214.464</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>インドネシア</td>
+      <td>ジャカルタ</td>
+      <td>24474.619</td>
+      <td>10252.258</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>ウガンダ</td>
+      <td>カンパラ</td>
+      <td>18149.993</td>
+      <td>9698.168</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>ウクライナ</td>
+      <td>キーウ</td>
+      <td>17973.996</td>
+      <td>5020.556</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>ウズベキスタン</td>
+      <td>タシケント</td>
+      <td>21273.287</td>
+      <td>5992.635</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>ウルグアイ</td>
+      <td>モンテビデオ</td>
+      <td>10587.552</td>
+      <td>12823.872</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>エクアドル</td>
+      <td>キト</td>
+      <td>8685.67</td>
+      <td>9743.773</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>エジプト</td>
+      <td>カイロ</td>
+      <td>18035.728</td>
+      <td>7086.951</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>エストニア</td>
+      <td>タリン</td>
+      <td>17482.025</td>
+      <td>3954.649</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>エスワティニ</td>
+      <td>ムババーネ</td>
+      <td>18027.189</td>
+      <td>12020.016</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>エチオピア</td>
+      <td>アディスアベバ</td>
+      <td>18675.152</td>
+      <td>8953.295</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>エリトリア</td>
+      <td>アスマラ</td>
+      <td>18691.439</td>
+      <td>8408.409</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>エルサルバドル</td>
+      <td>サンサルバドル</td>
+      <td>7776.051</td>
+      <td>8550.508</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>オーストラリア</td>
+      <td>キャンベラ</td>
+      <td>28077.123</td>
+      <td>12862.927</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>オーストリア</td>
+      <td>ウィーン</td>
+      <td>16767.397</td>
+      <td>5267.237</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>オマーン</td>
+      <td>マスカット</td>
+      <td>20361.235</td>
+      <td>7675.774</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>オランダ</td>
+      <td>アムステルダム</td>
+      <td>15791.391</td>
+      <td>4803.211</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>ガーナ</td>
+      <td>アクラ</td>
+      <td>15356.657</td>
+      <td>9251.667</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>カーボベルデ</td>
+      <td>プライア</td>
+      <td>13371.265</td>
+      <td>8444.932</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>ガイアナ</td>
+      <td>ジョージタウン</td>
+      <td>10418.974</td>
+      <td>9143.892</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>カザフスタン</td>
+      <td>アスタナ</td>
+      <td>21458.212</td>
+      <td>4939.659</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>カタール</td>
+      <td>ドーハ</td>
+      <td>19761.638</td>
+      <td>7525.089</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>カナダ</td>
+      <td>オタワ</td>
+      <td>8925.992</td>
+      <td>5566.71</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>ガボン</td>
+      <td>リーブルビル</td>
+      <td>16178.564</td>
+      <td>9690.031</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>カメルーン</td>
+      <td>ヤウンデ</td>
+      <td>16355.082</td>
+      <td>9394.747</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>韓国</td>
+      <td>ソウル</td>
+      <td>26191.142</td>
+      <td>6367.038</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>ガンビア</td>
+      <td>バンジュール</td>
+      <td>13961.68</td>
+      <td>8571.723</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>カンボジア</td>
+      <td>プノンペン</td>
+      <td>24311.772</td>
+      <td>8734.507</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>北朝鮮</td>
+      <td>ピョンヤン</td>
+      <td>26086.566</td>
+      <td>6222.256</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>北マケドニア</td>
+      <td>スコピエ</td>
+      <td>17198.775</td>
+      <td>5921.954</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>ギニア</td>
+      <td>コナクリ</td>
+      <td>14205.423</td>
+      <td>8912.448</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>ギニアビサウ</td>
+      <td>ビサウ</td>
+      <td>14046.335</td>
+      <td>8709.673</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>キプロス</td>
+      <td>ニコシア</td>
+      <td>18216.419</td>
+      <td>6600.347</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>キューバ</td>
+      <td>ハバナ</td>
+      <td>8358.169</td>
+      <td>7718.288</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>ギリシャ</td>
+      <td>アテネ</td>
+      <td>17395.312</td>
+      <td>6326.066</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>キリバス</td>
+      <td>タラワ</td>
+      <td>30109.787</td>
+      <td>9611.858</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>キルギス</td>
+      <td>ビシュケク</td>
+      <td>21727.965</td>
+      <td>5832.39</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>グアテマラ</td>
+      <td>グアテマラシティ</td>
+      <td>7663.067</td>
+      <td>8470.163</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>クウェート</td>
+      <td>クウェート</td>
+      <td>19460.799</td>
+      <td>7150.025</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>クック諸島</td>
+      <td>アバルア</td>
+      <td>1762.583</td>
+      <td>11558.675</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>グレナダ</td>
+      <td>セントジョージズ</td>
+      <td>10114.143</td>
+      <td>8693.839</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>クロアチア</td>
+      <td>ザグレブ</td>
+      <td>16735.062</td>
+      <td>5526.396</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>ケニア</td>
+      <td>ナイロビ</td>
+      <td>18510.821</td>
+      <td>9834.609</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>コートジボワール</td>
+      <td>ヤムスクロ</td>
+      <td>14925.464</td>
+      <td>9141.69</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>コスタリカ</td>
+      <td>サンホセ</td>
+      <td>8210.039</td>
+      <td>8876.227</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>コソボ</td>
+      <td>プリシュティナ</td>
+      <td>17176.979</td>
+      <td>5854.002</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>コモロ</td>
+      <td>モロニ</td>
+      <td>19059.463</td>
+      <td>10724.099</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>コロンビア</td>
+      <td>ボゴタ</td>
+      <td>9063.489</td>
+      <td>9332.992</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>コンゴ共和国</td>
+      <td>ブラザビル</td>
+      <td>16675.55</td>
+      <td>10089.738</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>コンゴ民主共和国</td>
+      <td>キンシャサ</td>
+      <td>16678.114</td>
+      <td>10092.061</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>サウジアラビア</td>
+      <td>リヤド</td>
+      <td>19355.505</td>
+      <td>7580.316</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>サモア</td>
+      <td>アピア</td>
+      <td>741.329</td>
+      <td>10910.589</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>サントメ・プリンシペ</td>
+      <td>サントメ</td>
+      <td>15947.594</td>
+      <td>9696.11</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>ザンビア</td>
+      <td>ルサカ</td>
+      <td>17784.941</td>
+      <td>11048.968</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>サンマリノ</td>
+      <td>サンマリノ</td>
+      <td>16434.307</td>
+      <td>5722.461</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>シエラレオネ</td>
+      <td>フリータウン</td>
+      <td>14246.479</td>
+      <td>9000.008</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>ジブチ</td>
+      <td>ジブチ</td>
+      <td>19049.76</td>
+      <td>8732.936</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>ジャマイカ</td>
+      <td>キングストン</td>
+      <td>8832.16</td>
+      <td>8178.104</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>ジョージア</td>
+      <td>トビリシ</td>
+      <td>19188.368</td>
+      <td>5950.388</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>シリア</td>
+      <td>ダマスカス</td>
+      <td>18465.998</td>
+      <td>6759.523</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>シンガポール</td>
+      <td>シンガポール</td>
+      <td>24220.305</td>
+      <td>9613.677</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>ジンバブエ</td>
+      <td>ハラレ</td>
+      <td>18018.794</td>
+      <td>11260.027</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>スイス</td>
+      <td>ベルン</td>
+      <td>16008.857</td>
+      <td>5403.81</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>スウェーデン</td>
+      <td>ストックホルム</td>
+      <td>16912.034</td>
+      <td>3968.464</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>スーダン</td>
+      <td>ハルツーム</td>
+      <td>18144.2</td>
+      <td>8384.766</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>スペイン</td>
+      <td>マドリード</td>
+      <td>15059.497</td>
+      <td>6082.973</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>スリナム</td>
+      <td>パラマリボ</td>
+      <td>10675.712</td>
+      <td>9228.072</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>スリランカ</td>
+      <td>スリジャヤワルダナプラコッテ</td>
+      <td>22180.183</td>
+      <td>9135.63</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>スロバキア</td>
+      <td>ブラチスラバ</td>
+      <td>16831.561</td>
+      <td>5274.536</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>スロベニア</td>
+      <td>リュブリャナ</td>
+      <td>16609.859</td>
+      <td>5499.937</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>セーシェル</td>
+      <td>ビクトリア</td>
+      <td>20097.86</td>
+      <td>10119.14</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>赤道ギニア</td>
+      <td>マラボ</td>
+      <td>16122.229</td>
+      <td>9404.931</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>セネガル</td>
+      <td>ダカール</td>
+      <td>13889.021</td>
+      <td>8466.256</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>セルビア</td>
+      <td>ベオグラード</td>
+      <td>17117.188</td>
+      <td>5630.999</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>セントキッツ</td>
+      <td>バセテール</td>
+      <td>10030.5</td>
+      <td>8237.067</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>セントビンセント・グレナディーン</td>
+      <td>キングスタウン</td>
+      <td>10158.334</td>
+      <td>8598.003</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>セントルシア</td>
+      <td>カストリーズ</td>
+      <td>10178.339</td>
+      <td>8523.831</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>ソマリア</td>
+      <td>モガディシオ</td>
+      <td>19236.632</td>
+      <td>9551.626</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>ソロモン諸島</td>
+      <td>ホニアラ</td>
+      <td>29001.137</td>
+      <td>10531.126</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>タイ</td>
+      <td>バンコク</td>
+      <td>23935.664</td>
+      <td>8546.055</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>台湾</td>
+      <td>台北（タイペイ）</td>
+      <td>25729.97</td>
+      <td>7547.252</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>タジキスタン</td>
+      <td>ドゥシャンベ</td>
+      <td>21233.909</td>
+      <td>6268.861</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>タンザニア</td>
+      <td>ドドマ</td>
+      <td>18419.587</td>
+      <td>10252.002</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>チェコ</td>
+      <td>プラハ</td>
+      <td>16602.534</td>
+      <td>5061.611</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>チャド</td>
+      <td>ウンジャメナ</td>
+      <td>16655.656</td>
+      <td>8688.815</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>中央アフリカ</td>
+      <td>バンギ</td>
+      <td>16957.122</td>
+      <td>9353.041</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>中国</td>
+      <td>北京（ペキン）</td>
+      <td>25317.148</td>
+      <td>6134.652</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>チュニジア</td>
+      <td>チュニス</td>
+      <td>16240.032</td>
+      <td>6442.478</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>チリ</td>
+      <td>サンティアゴ</td>
+      <td>9355.366</td>
+      <td>12682.984</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>ツバル</td>
+      <td>フナフティ</td>
+      <td>30639.419</td>
+      <td>10452.905</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>デンマーク</td>
+      <td>コペンハーゲン</td>
+      <td>16444.841</td>
+      <td>4416.507</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>ドイツ</td>
+      <td>ベルリン</td>
+      <td>16516.271</td>
+      <td>4785.995</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>トーゴ</td>
+      <td>ロメ</td>
+      <td>15477.535</td>
+      <td>9202.059</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>ドミニカ共和国</td>
+      <td>サントドミンゴ</td>
+      <td>9416.985</td>
+      <td>8135.737</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>ドミニカ国</td>
+      <td>ロゾー</td>
+      <td>10144.577</td>
+      <td>8411.442</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>トリニダード・トバゴ</td>
+      <td>ポートオブスペイン</td>
+      <td>10134.033</td>
+      <td>8814.025</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>トルクメニスタン</td>
+      <td>アシガバット</td>
+      <td>20345.192</td>
+      <td>6329.53</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>トルコ</td>
+      <td>アンカラ</td>
+      <td>18171.465</td>
+      <td>6131.144</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>トンガ</td>
+      <td>ヌクアロファ</td>
+      <td>448.972</td>
+      <td>11551.988</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>ナイジェリア</td>
+      <td>アブジャ</td>
+      <td>16013.095</td>
+      <td>8952.184</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>ナウル</td>
+      <td>ヤレン</td>
+      <td>29593.548</td>
+      <td>9771.633</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>ナミビア</td>
+      <td>ウィントフック</td>
+      <td>16829.506</td>
+      <td>11680.501</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>ニウエ</td>
+      <td>アロフィ</td>
+      <td>898.557</td>
+      <td>11367.781</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>ニカラグア</td>
+      <td>マナグア</td>
+      <td>8022.546</td>
+      <td>8686.845</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>ニジェール</td>
+      <td>ニアメ</td>
+      <td>15553.679</td>
+      <td>8566.877</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>日本</td>
+      <td>東京</td>
+      <td>27274.25</td>
+      <td>6550.374</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>ニュージーランド</td>
+      <td>ウェリントン</td>
+      <td>30263.139</td>
+      <td>13455.181</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>ネパール</td>
+      <td>カトマンズ</td>
+      <td>22641.662</td>
+      <td>7304.242</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>ノルウェー</td>
+      <td>オスロ</td>
+      <td>16288.397</td>
+      <td>3894.458</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>バーレーン</td>
+      <td>マナーマ</td>
+      <td>19682.187</td>
+      <td>7438.473</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>ハイチ</td>
+      <td>ポルトープランス</td>
+      <td>9210.801</td>
+      <td>8126.731</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>パキスタン</td>
+      <td>イスラマバード</td>
+      <td>21593.728</td>
+      <td>6745.074</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>バチカン</td>
+      <td>バチカン</td>
+      <td>16434.703</td>
+      <td>5932.368</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>パナマ</td>
+      <td>パナマシティ</td>
+      <td>8598.503</td>
+      <td>8958.77</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>バヌアツ</td>
+      <td>ポートビラ</td>
+      <td>29712.613</td>
+      <td>11251.644</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>バハマ</td>
+      <td>ナッソー</td>
+      <td>8781.908</td>
+      <td>7544.336</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>パプアニューギニア</td>
+      <td>ポートモレスビー</td>
+      <td>27912.13</td>
+      <td>10531.531</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>パラオ</td>
+      <td>マルキョク</td>
+      <td>26843.552</td>
+      <td>9085.558</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>パラグアイ</td>
+      <td>アスンシオン</td>
+      <td>10470.548</td>
+      <td>11926.959</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>バルバドス</td>
+      <td>ブリッジタウン</td>
+      <td>10296.772</td>
+      <td>8602.636</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>ハンガリー</td>
+      <td>ブダペスト</td>
+      <td>16996.484</td>
+      <td>5343.625</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>バングラデシュ</td>
+      <td>ダッカ</td>
+      <td>23076.067</td>
+      <td>7667.106</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>東ティモール</td>
+      <td>ディリ</td>
+      <td>26069.856</td>
+      <td>10455.605</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>フィジー</td>
+      <td>スバ</td>
+      <td>30573.707</td>
+      <td>11287.244</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>フィリピン</td>
+      <td>マニラ</td>
+      <td>25680.32</td>
+      <td>8473.446</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>フィンランド</td>
+      <td>ヘルシンキ</td>
+      <td>17499.724</td>
+      <td>3861.856</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>ブータン</td>
+      <td>ティンプー</td>
+      <td>23010.317</td>
+      <td>7325.389</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>ブラジル</td>
+      <td>ブラジリア</td>
+      <td>11292.763</td>
+      <td>11080.695</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>フランス</td>
+      <td>パリ</td>
+      <td>15574.4</td>
+      <td>5196.646</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>ブルガリア</td>
+      <td>ソフィア</td>
+      <td>17361.608</td>
+      <td>5850.853</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>ブルキナファソ</td>
+      <td>ワガドゥグー</td>
+      <td>15243.911</td>
+      <td>8666.097</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>ブルネイ</td>
+      <td>バンダルスリブガワン</td>
+      <td>25164.838</td>
+      <td>9306.018</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>ブルンジ</td>
+      <td>ブシュンブラ</td>
+      <td>17875.512</td>
+      <td>10012.633</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>ベトナム</td>
+      <td>ハノイ</td>
+      <td>24391.629</td>
+      <td>7907.31</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>ベナン</td>
+      <td>ポルトノボ</td>
+      <td>15599.073</td>
+      <td>9172.848</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>ベネズエラ</td>
+      <td>カラカス</td>
+      <td>9673.561</td>
+      <td>8826.862</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>ベラルーシ</td>
+      <td>ミンスク</td>
+      <td>17720.941</td>
+      <td>4626.723</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>ベリーズ</td>
+      <td>ベルモパン</td>
+      <td>7811.934</td>
+      <td>8240.947</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>ペルー</td>
+      <td>リマ</td>
+      <td>8811.781</td>
+      <td>10755.995</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>ベルギー</td>
+      <td>ブリュッセル</td>
+      <td>15744.732</td>
+      <td>4975.7</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>ポーランド</td>
+      <td>ワルシャワ</td>
+      <td>17163.492</td>
+      <td>4818.788</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>ボスニア・ヘルツェゴビナ</td>
+      <td>サラエボ</td>
+      <td>16944.329</td>
+      <td>5730.565</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>ボツワナ</td>
+      <td>ハボローネ</td>
+      <td>17582.097</td>
+      <td>11868.384</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>ボリビア</td>
+      <td>ラパス</td>
+      <td>9569.725</td>
+      <td>11143.058</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>ポルトガル</td>
+      <td>リスボン</td>
+      <td>14595.493</td>
+      <td>6254.126</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>ホンジュラス</td>
+      <td>テグシガルパ</td>
+      <td>7947.504</td>
+      <td>8515.034</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>マーシャル諸島</td>
+      <td>マジュロ</td>
+      <td>29973.143</td>
+      <td>9120.376</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>マダガスカル</td>
+      <td>アンタナナリボ</td>
+      <td>19422.502</td>
+      <td>11354.557</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>マラウイ</td>
+      <td>リロングウェ</td>
+      <td>18252.546</td>
+      <td>10921.718</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>マリ</td>
+      <td>バマコ</td>
+      <td>14692.351</td>
+      <td>8641.958</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>マルタ</td>
+      <td>バレッタ</td>
+      <td>16610.385</td>
+      <td>6530.125</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>マレーシア</td>
+      <td>クアラルンプール</td>
+      <td>24037.227</td>
+      <td>9456.366</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>ミクロネシア</td>
+      <td>パリキール</td>
+      <td>28847.689</td>
+      <td>9134.55</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>南アフリカ</td>
+      <td>プレトリア（ツワネ）</td>
+      <td>17775.793</td>
+      <td>11966.925</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>南スーダン</td>
+      <td>ジュバ</td>
+      <td>18066.501</td>
+      <td>9312.601</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>ミャンマー</td>
+      <td>ネーピードー</td>
+      <td>23563.193</td>
+      <td>8021.084</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>メキシコ</td>
+      <td>メキシコシティ</td>
+      <td>6928.86</td>
+      <td>8048.93</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>モーリシャス</td>
+      <td>ポートルイス</td>
+      <td>20272.755</td>
+      <td>11465.934</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>モーリタニア</td>
+      <td>ヌアクショット</td>
+      <td>14013.308</td>
+      <td>8167.688</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>モザンビーク</td>
+      <td>マプト</td>
+      <td>18148.932</td>
+      <td>11987.337</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>モナコ</td>
+      <td>モナコ</td>
+      <td>16006.424</td>
+      <td>5743.895</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>モルディブ</td>
+      <td>マレ</td>
+      <td>21636.154</td>
+      <td>9369.439</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>モルドバ</td>
+      <td>キシナウ</td>
+      <td>17830.397</td>
+      <td>5395.858</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>モロッコ</td>
+      <td>ラバト</td>
+      <td>14792.608</td>
+      <td>6715.417</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>モンゴル</td>
+      <td>ウランバートル</td>
+      <td>24482.069</td>
+      <td>5299.028</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>モンテネグロ</td>
+      <td>ポドゴリツァ</td>
+      <td>17014.859</td>
+      <td>5877.098</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>ヨルダン</td>
+      <td>アンマン</td>
+      <td>18434.35</td>
+      <td>6908.602</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>ラオス</td>
+      <td>ビエンチャン</td>
+      <td>24116.099</td>
+      <td>8177.936</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>ラトビア</td>
+      <td>リガ</td>
+      <td>17427.608</td>
+      <td>4263.058</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>リトアニア</td>
+      <td>ビリニュス</td>
+      <td>17528.172</td>
+      <td>4534.876</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>リビア</td>
+      <td>トリポリ</td>
+      <td>16497.37</td>
+      <td>6819.002</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>リヒテンシュタイン</td>
+      <td>ファドーツ</td>
+      <td>16185.174</td>
+      <td>5383.152</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>リベリア</td>
+      <td>モンロビア</td>
+      <td>14454.512</td>
+      <td>9188.004</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>ルーマニア</td>
+      <td>ブカレスト</td>
+      <td>17596.856</td>
+      <td>5670.476</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>ルクセンブルク</td>
+      <td>ルクセンブルク</td>
+      <td>15896.255</td>
+      <td>5113.571</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>ルワンダ</td>
+      <td>キガリ</td>
+      <td>17934.816</td>
+      <td>9890.995</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>レソト</td>
+      <td>マセル</td>
+      <td>17715.54</td>
+      <td>12294.846</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>レバノン</td>
+      <td>ベイルート</td>
+      <td>18398.398</td>
+      <td>6724.731</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+    <tr>
+      <td>ロシア</td>
+      <td>モスクワ</td>
+      <td>18577.873</td>
+      <td>4406.21</td>
+    <td><button onclick="copyToClipboard(this)">tpコマンドをコピー</button></td> </tr>
+  </table>
+  
 </body>
 </html>
